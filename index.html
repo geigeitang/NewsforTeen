@@ -64,6 +64,27 @@
   .read:active{opacity:.85}
   footer{margin-top:22px;text-align:center;font-size:11.5px;color:#9aa3ad}
   .tip{margin-top:10px;font-size:11.5px;color:#9aa3ad;text-align:center}
+  .essay{
+    background:linear-gradient(135deg,#1f3a8a,#2f6bff);
+    color:#fff;border-radius:var(--radius);padding:18px 16px 16px;margin-top:18px;
+    box-shadow:0 6px 18px rgba(31,58,138,.18);
+  }
+  .essay .ebadge{font-size:12px;opacity:.92;letter-spacing:.5px;margin-bottom:6px}
+  .essay h3{font-size:18px;margin:0 0 2px;font-weight:800}
+  .essay .etitle{font-size:15px;font-weight:700;margin:8px 0 12px;line-height:1.4}
+  .essay .esub{font-size:12px;opacity:.9;margin-bottom:12px}
+  .essay .box{background:rgba(255,255,255,.14);border-radius:12px;padding:11px 13px;margin-bottom:10px}
+  .essay .box .lbl{font-size:11.5px;font-weight:700;opacity:.85;margin-bottom:5px;letter-spacing:.5px}
+  .essay .box p{margin:0;font-size:13.5px;line-height:1.6}
+  .essay .q{background:rgba(255,255,255,.18);border-radius:12px;padding:11px 13px;margin-bottom:10px}
+  .essay .q .lbl{font-size:11.5px;font-weight:700;opacity:.85;margin-bottom:5px}
+  .essay .q p{margin:0;font-size:13.5px;line-height:1.6}
+  .read2{
+    display:inline-flex;align-items:center;gap:5px;text-decoration:none;
+    background:#fff;color:#1f3a8a;font-size:13.5px;font-weight:700;
+    padding:9px 16px;border-radius:999px;
+  }
+  .read2:active{opacity:.85}
 </style>
 </head>
 <body>
@@ -79,6 +100,7 @@
     <span class="pill" id="count">3 篇精选</span>
   </div>
   <div id="list"></div>
+  <div id="essayBox"></div>
   <div class="tip" id="tip">内容由 AI 联网精选并整理，建议搭配学校《道德与法治》课程阅读。</div>
   <footer>为上海初三学生定制 · 数据源：央视网 / 新华社 / 人民网 等</footer>
 </div>
@@ -119,7 +141,26 @@
         why: "对应“法治护航成长、特殊保护”。国家用规则为青少年筑起保护网，也提醒依法上网、增强自我保护。",
         url: "https://sfj.zhoukou.gov.cn/sitesources/sfj/page_pc/wzsy/flfg/article19f5da8806b64a69a33dd6358c4e0c85.html"
       }
-    ]
+    ],
+    essay: {
+      title: "中国智造，打开全球创新新格局",
+      source: "人民日报（观点频道）",
+      date: "2026-09-09",
+      url: "https://opinion.people.com.cn/n1/2026/0909/c461529-40794985.html",
+      summary: "以华为、小米、苹果折叠屏手机同台竞逐的现象切入，分析中国品牌从无缘高端到赢得领先身位的转变原因，指出自主创新实力与良好创新生态共同托举“中国智造”。",
+      thesis: "转变源于自主创新实力，也离不开一方培育创新的热土；坚持创新核心地位，中国智造必将打开全球创新新格局。",
+      arguments: [
+        "分论点一（举例论证）：源于自主创新实力——华为将相关技术落地为消费级芯片、小米自研芯片搭档自研内存，敢为人先的创新让产品赢得市场。",
+        "分论点二（道理论证）：离不开一方热土——政策、资金、人才一路护航，超大规模市场让企业敢投入、产业链能协同。",
+        "对比手法：10多年前国产手机无缘高端市场，如今中国品牌站上更高舞台，今昔对比凸显创新之变。"
+      ],
+      methods: "设问（“转变何以发生？”引出分析）、举例论证、对比论证、道理论证相结合；由现象到原因再到展望，层层递进。",
+      quotes: [
+        "创新脚步不停、实干劲头不减，中国智造必将打开全球创新新格局。",
+        "有敢为人先的创新，产品就有市场。"
+      ],
+      practice: "请用一句话概括本文的中心论点，并找出文中使用的两种论证方法（各举一个例子）。再联系你今天读到的“火箭陆地回收”新闻，说说“自主创新”在现实中意味着什么。"
+    }
   };
 
   function render(data){
@@ -139,12 +180,36 @@
     document.getElementById("list").innerHTML = html;
   }
 
+  function renderEssay(e){
+    var box = document.getElementById("essayBox");
+    if(!e || !e.title){ box.innerHTML = ""; return; }
+    var html = '<div class="essay">'
+      + '<div class="ebadge">📝 议论文精读 · 提升语文阅读能力</div>'
+      + '<h3>今日议论文精读</h3>'
+      + '<div class="etitle">《'+e.title+'》</div>'
+      + '<div class="esub">'+e.source+' · '+e.date+'</div>'
+      + '<div class="box"><div class="lbl">内容速览</div><p>'+e.summary+'</p></div>'
+      + '<div class="box"><div class="lbl">中心论点</div><p>'+e.thesis+'</p></div>';
+    if(e.arguments && e.arguments.length){
+      html += '<div class="box"><div class="lbl">分论点 / 论据</div><p>'+e.arguments.map(function(a,k){return (k+1)+'. '+a;}).join('<br>')+'</p></div>';
+    }
+    if(e.methods){ html += '<div class="box"><div class="lbl">论证方法</div><p>'+e.methods+'</p></div>'; }
+    if(e.quotes && e.quotes.length){
+      html += '<div class="box"><div class="lbl">金句摘抄</div><p>'+e.quotes.map(function(q){return '“'+q+'”';}).join('<br>')+'</p></div>';
+    }
+    html += '<div class="q"><div class="lbl">💡 思考练习</div><p>'+e.practice+'</p></div>';
+    if(e.url){ html += '<a class="read2" href="'+e.url+'" target="_blank" rel="noopener">阅读原文 ›</a>'; }
+    html += '</div>';
+    box.innerHTML = html;
+  }
+
   if(DATA_URL){
     fetch(DATA_URL, {cache:"no-store"}).then(function(r){return r.json();})
-      .then(function(d){ if(d && d.articles && d.articles.length) render(d); else render(DEFAULT); })
-      .catch(function(){ render(DEFAULT); });
+      .then(function(d){ if(d && d.articles && d.articles.length){ render(d); renderEssay(d.essay); } else { render(DEFAULT); renderEssay(DEFAULT.essay); } })
+      .catch(function(){ render(DEFAULT); renderEssay(DEFAULT.essay); });
   } else {
     render(DEFAULT);
+    renderEssay(DEFAULT.essay);
   }
 </script>
 </body>
