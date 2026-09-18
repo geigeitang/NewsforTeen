@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<title>每日时政 · 中学生版</title>
+<style>
+  :root{
+    --brand:#c8102e;        /* 中国红 */
+    --brand-soft:#fff1f2;
+    --ink:#1f2329;
+    --ink-2:#5b6470;
+    --line:#eceff3;
+    --bg:#f5f6f8;
+    --card:#ffffff;
+    --tag-bg:#eef4ff;
+    --tag-ink:#2f6bff;
+    --radius:16px;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{margin:0;padding:0}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    background:var(--bg);color:var(--ink);line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:480px;margin:0 auto;padding:0 14px 36px;}
+  header{
+    background:linear-gradient(135deg,#c8102e,#e23b4e);
+    color:#fff;padding:22px 18px 18px;border-radius:0 0 22px 22px;
+    box-shadow:0 6px 18px rgba(200,16,46,.18);
+  }
+  .brand{font-size:13px;opacity:.92;letter-spacing:.5px}
+  h1{font-size:22px;margin:6px 0 4px;font-weight:800;letter-spacing:.5px}
+  .sub{font-size:12.5px;opacity:.9}
+  .datebar{
+    display:flex;align-items:center;justify-content:space-between;
+    margin:14px 2px 6px;font-size:13px;color:var(--ink-2)
+  }
+  .datebar b{color:var(--ink);font-weight:700}
+  .pill{background:#fff;color:var(--brand);font-size:11px;font-weight:700;
+    padding:3px 9px;border-radius:999px}
+  .card{
+    background:var(--card);border-radius:var(--radius);padding:16px 16px 14px;
+    margin-top:14px;box-shadow:0 2px 10px rgba(20,30,50,.05);
+    border:1px solid var(--line);
+  }
+  .tag{display:inline-block;background:var(--tag-bg);color:var(--tag-ink);
+    font-size:11.5px;font-weight:700;padding:3px 10px;border-radius:999px;margin-bottom:9px}
+  .card h2{font-size:17.5px;line-height:1.4;margin:0 0 8px;font-weight:800}
+  .meta{font-size:12px;color:var(--ink-2);margin-bottom:10px}
+  .summary{font-size:14.5px;color:#2b313a;margin:0 0 12px}
+  .why{
+    background:var(--brand-soft);border-left:3px solid var(--brand);
+    border-radius:0 10px 10px 0;padding:10px 12px;font-size:13.5px;color:#7a2230;margin-bottom:12px
+  }
+  .why b{color:var(--brand)}
+  .read{
+    display:inline-flex;align-items:center;gap:5px;text-decoration:none;
+    background:var(--brand);color:#fff;font-size:13.5px;font-weight:700;
+    padding:9px 16px;border-radius:999px;
+  }
+  .read:active{opacity:.85}
+  footer{margin-top:22px;text-align:center;font-size:11.5px;color:#9aa3ad}
+  .tip{margin-top:10px;font-size:11.5px;color:#9aa3ad;text-align:center}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">中小学生时政阅读工作台</div>
+  <h1>每日时政 · 中学生版</h1>
+  <div class="sub">每天 3 篇 · 权威来源 · 适合初三阅读</div>
+</header>
+
+<div class="wrap">
+  <div class="datebar">
+    <span id="dateLabel"><b>2026年9月18日</b> · 周五</span>
+    <span class="pill" id="count">3 篇精选</span>
+  </div>
+  <div id="list"></div>
+  <div class="tip" id="tip">内容由 AI 联网精选并整理，建议搭配学校《道德与法治》课程阅读。</div>
+  <footer>为上海初三学生定制 · 数据源：央视网 / 新华社 / 人民网 等</footer>
+</div>
+
+<script>
+  // GitHub Pages 同源加载（与 index.html 同仓库根目录），无需跨域
+  var DATA_URL = "data.json";
+
+  // 内置兜底内容（首次部署 / 抓取失败时使用），与最新 data.json 保持一致
+  var DEFAULT = {
+    date: "2026年9月18日",
+    weekday: "星期五",
+    articles: [
+      {
+        tag: "科技 · 航天",
+        title: "我国首次实现火箭陆地回收，商业航天再进一步",
+        source: "新华网",
+        date: "2026-08-19",
+        summary: "8月19日，朱雀三号遥二运载火箭在甘肃成功完成一子级陆地回收，这是我国首次以着陆腿方式回收火箭。此前7月长征十号乙已实现海上回收，40天内两种技术路线接连成功。",
+        why: "对应“科技创新、自立自强”。火箭一子级约占成本七成，能回收即可大幅降低发射成本、支撑卫星组网，是商业航天发展的关键一步。",
+        url: "https://www.news.cn/politics/20260819/1a901f63eb2c43fd9793eaf6849bce47/c.html"
+      },
+      {
+        tag: "民生 · 政策",
+        title: "民生保障再加力：养老、育儿、上学都有新实惠",
+        source: "央视网（新闻联播）",
+        date: "2026-09-09",
+        summary: "今年以来国家加大民生投入：超120亿元给失能老人发养老补贴；241亿元落实幼儿园大班免保教费，惠及约2400万人次；近1000亿元育儿补贴惠及超2500万婴幼儿；以旧换新与汽车分期贴息扩围提标。",
+        why: "对应“共享发展成果、以人民为中心”。把资金投向一老一小和急难愁盼，是共同富裕与社会保障体系的生动案例。",
+        url: "https://news.cctv.com/2026/09/09/ARTI9SCJRklRUeC8gnTvKDxv260909.shtml"
+      },
+      {
+        tag: "法治 · 生活",
+        title: "一批新规9月起施行，专门保护未成年人",
+        source: "央视网 / 司法部",
+        date: "2026-09-01",
+        summary: "9月起一批新规落地：明确不得为未满16周岁未成年人提供网络直播发布服务；新版《国家基本药物目录》收录794种药品、大幅扩容；另有微短剧分类管理、智能与人工客服协同国标等。",
+        why: "对应“法治护航成长、特殊保护”。国家用规则为青少年筑起保护网，也提醒依法上网、增强自我保护。",
+        url: "https://sfj.zhoukou.gov.cn/sitesources/sfj/page_pc/wzsy/flfg/article19f5da8806b64a69a33dd6358c4e0c85.html"
+      }
+    ]
+  };
+
+  function render(data){
+    document.getElementById("dateLabel").innerHTML = "<b>"+data.date+"</b> · "+data.weekday;
+    document.getElementById("count").textContent = (data.articles?data.articles.length:0)+" 篇精选";
+    var html = "";
+    data.articles.forEach(function(a){
+      html += '<div class="card">'
+            + '<span class="tag">'+a.tag+'</span>'
+            + '<h2>'+a.title+'</h2>'
+            + '<div class="meta">'+a.source+' · '+a.date+'</div>'
+            + '<p class="summary">'+a.summary+'</p>'
+            + '<div class="why"><b>为什么值得读：</b>'+a.why+'</div>'
+            + '<a class="read" href="'+a.url+'" target="_blank" rel="noopener">阅读原文 ›</a>'
+            + '</div>';
+    });
+    document.getElementById("list").innerHTML = html;
+  }
+
+  if(DATA_URL){
+    fetch(DATA_URL, {cache:"no-store"}).then(function(r){return r.json();})
+      .then(function(d){ if(d && d.articles && d.articles.length) render(d); else render(DEFAULT); })
+      .catch(function(){ render(DEFAULT); });
+  } else {
+    render(DEFAULT);
+  }
+</script>
+</body>
+</html>
