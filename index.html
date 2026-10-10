@@ -104,6 +104,18 @@
   .writing .wp{background:rgba(255,255,255,.18);border-radius:12px;padding:11px 13px;margin-bottom:10px}
   .writing .wp .lbl{font-size:11.5px;font-weight:700;opacity:.85;margin-bottom:5px}
   .writing .wp p{margin:0;font-size:13.5px;line-height:1.6}
+  .writing .wintro{font-size:11.5px;opacity:.92;margin:0 0 12px;line-height:1.55}
+  .writing .wdirs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+  .writing .wdir{background:rgba(255,255,255,.22);border-radius:999px;padding:3px 10px;font-size:11px;font-weight:700}
+  .writing .wcard .wdir-inline{display:inline-block;background:rgba(255,255,255,.26);border-radius:999px;padding:2px 9px;font-size:11px;font-weight:700;margin:0 0 9px}
+  .writing .wdetail{background:rgba(255,255,255,.2);border-left:3px solid #ffd66b;border-radius:0 10px 10px 0;padding:9px 12px;margin:9px 0 4px;font-size:13px;line-height:1.6}
+  .writing .wdetail b{color:#fff}
+  .writing .wavoid{background:rgba(255,240,240,.96);color:#7a2230;border-radius:10px;padding:9px 12px;margin:9px 0 4px;font-size:12.5px;line-height:1.55}
+  .writing .wavoid .wl{font-weight:800;color:#c8102e}
+  .writing .wcheck{background:rgba(255,255,255,.16);border-radius:10px;padding:9px 12px;margin:9px 0 4px;font-size:12.5px;line-height:1.6}
+  .writing .wcheck b{color:#fff}
+  .writing .wstruct{font-size:12px;opacity:.94;line-height:1.6;margin-top:12px;background:rgba(255,255,255,.14);border-radius:10px;padding:10px 12px}
+  .writing .wstruct b{color:#fff}
 </style>
 </head>
 <body>
@@ -184,23 +196,33 @@
       practice: "请用一句话概括本文的中心论点，并指出文中使用了哪些论证方法（各举一个例子）。再联系今天读到的“重大工程”或“文物返还”新闻，谈谈你对“把好事办到群众（或国家）心坎上”的理解。"
     },
     writing: {
+      intro: "紧贴上海中考：重真情实感、以小见大、细节与心理变化；评分＝中心与材料(25)＋语言(25)＋思路结构(10)。今日优先方向见下方。",
+      directions: ["自我成长","人与他人","审美与心灵感悟","人与外物·时光"],
       news: {
         theme: "科技自立 · 青春担当",
-        from: "今日素材来源：《海上一箭九星 引力一号遥三运载火箭发射成功》",
-        material: "9月16日，我国在山东海域用引力一号遥三火箭，把9颗卫星一次性送上太空。值得骄傲的是，这枚火箭由上海企业研制、在家门口的海域发射——从设计到出厂都在上海完成。更难得的是，它已是第4次飞行，意味着我国海上发射从“偶尔尝鲜”走向“常态运营”。",
-        angle: "考场用法：别只写“国家真厉害”。试着把宏大成就拉回“我”——我所在的城市造出了火箭，课本里的“科技创新”不再是名词，而是家门口的真实故事。用“小切口+大主题”写出少年与时代的连接。",
+        direction: "自我成长 · 人与外物",
+        from: "素材来源：《海上一箭九星 引力一号遥三运载火箭发射成功》",
+        material: "9月16日，我国在山东海域用引力一号遥三火箭，把9颗卫星一次性送上太空。这枚火箭由上海企业研制、在家门口的海域发射，从设计到出厂都在上海完成，且已是第4次飞行——海上发射从“偶尔尝鲜”走向“常态运营”。",
+        detail: "细节支点：聚焦“家门口”——我所在的城市造出了火箭。用‘仰望火箭尾焰’的一个动作、一句心里话，代替大段抒情，把宏大成就拉回‘我’。",
+        angle: "立意角度（含思辨）：别只写‘国家真厉害’。更深一层——课本里的‘科技创新’原来是家门口的真实故事；所谓成长，是终于能听懂时代的心跳，把自己写进大主题里。",
+        avoid: "避雷 · 拒绝套题：别写成空洞的‘爱国演讲’；别套‘考试失利→老师鼓励’式旧模板。用小切口写出少年与时代的连接，由事及己。",
         fit: ["《这不过是个开场》","《有一种甜》","成长 · 责任 · 科技强国"],
-        phrases: ["每一次仰望星空，背后都是脚踏实地的积累。","从跟跑到并跑再到领跑，中国航天人写就一部自立自强的奋斗史。"]
+        checkpoint: "扣题：写《这不过是个开场》，结尾要点明——火箭升空不是终点，而是我认识‘中国智造’的开始。",
+        phrases: ["每一次仰望星空，背后都是脚踏实地的积累。","从跟跑到并跑再到领跑，写就一部自立自强的奋斗史。"]
       },
       classic: {
-        theme: "坚守 · 家国情怀",
-        type: "人物素材 · 黄旭华（中国核潜艇之父）",
-        material: "黄旭华，中国核潜艇之父。为研制国之重器，他隐姓埋名三十年，连父亲去世都未能送别，家人不知他身在何处、所做何事。他说：“对国家的忠，就是对父母最大的孝。”2019年，93岁的他获授“共和国勋章”。如今核潜艇已成为守护海疆的“定海神针”。",
-        angle: "考场用法：写“责任”“奉献”“家国”类命题时，黄旭华是极稳的论据。关键是写出“取舍”——他把小家的团圆让给大国的安全，这种“忠孝之间的选择”最能打动阅卷老师。可配合“我也曾为某件事放弃享受”的个人经历，由人到己、以小见大。",
-        fit: ["《真的不容易》","《这事，真带劲》","责任 · 家国 · 奉献"],
-        phrases: ["对国家的忠，就是对父母最大的孝。","把名字写在隐秘处，把功勋刻在深海里。"]
+        theme: "安静的感动 · 草木里的生机",
+        direction: "审美与心灵感悟",
+        type: "人物素材 · 汪曾祺（写草木虫鱼的生活家）",
+        material: "汪曾祺一生颠沛，却总能在烟火里看见美：下放时观察马铃薯的花，晚年写《人间草木》，说‘一定要爱着点什么，恰似草木对光阴的钟情’。他写咸鸭蛋‘筷子头一扎，吱——红油就冒出来’，没有一句说教，全是生活的热气。",
+        detail: "细节支点：选‘筷子头一扎，吱——红油冒出来’这个通感细节，或一个慢下来的瞬间，用感官描写代替议论，写出‘会心’的恬静。",
+        angle: "立意角度（含思辨）：会心之乐不在惊天动地，而在慢下来、对生活多一分留意；更深一层——当世界越来越快，能为一朵花、一颗蛋心动，本身就是一种了不起的能力。",
+        avoid: "避雷 · 拒绝套题：别把汪曾祺写成‘励志名人’模板或堆砌生平；重点写‘心灵触动’，拒绝空喊‘我们要热爱生活’。",
+        fit: ["《会心之乐》","《有一种甜》","审美 · 心灵 · 慢生活"],
+        checkpoint: "扣题：写《会心之乐》，通篇围绕‘会心’——不是热闹的快乐，而是安静的共鸣；结尾回扣。",
+        phrases: ["一定要爱着点什么，恰似草木对光阴的钟情。","生活的热气，藏在最不起眼的烟火里。"]
       },
-      practice: "今日微练笔（80字左右）：用上面“引力一号”或“黄旭华”任一素材，写一个作文开头——要求点出“时代/国家”与“我”的连接，并自然引出“成长”主题。示例：当一枚上海造的火箭从家门口的海域腾空，我忽然懂了：所谓成长，就是终于能听懂时代的心跳。"
+      practice: "今日微练笔（80字左右）：从上面两张素材卡任选其一，写一个作文片段开头——先用一两笔环境/白描把画面立住（不急着喊题），再自然带出'他人/时代/草木'与'我'的连接，每段暗扣题目关键词。示例：夏夜阳台上风很轻，电视里正播着一枚上海造的火箭从家门口腾空。我托着腮忽然懂了——所谓成长，就是终于能听懂时代的心跳。"
     }
   };
 
@@ -253,29 +275,29 @@
     var html = '<div class="writing">'
       + '<div class="wbadge">✍️ 中考作文素材 · 积累每一天（紧贴上海中考）</div>'
       + '<h3>今日作文素材积累</h3>';
-    if(w.news){
-      var n = w.news;
-      html += '<div class="wcard">'
-        + '<div class="wt">📰 当日时政素材 · '+ (n.theme||"") +'</div>';
-      if(n.from){ html += '<div class="wmeta">来源：'+ n.from +'</div>'; }
-      if(n.material){ html += '<div class="lbl">素材速写</div><p>'+ n.material +'</p>'; }
-      if(n.angle){ html += '<div class="lbl">立意角度</div><p>'+ n.angle +'</p>'; }
-      if(n.fit && n.fit.length){ html += '<div class="lbl">适配命题 / 主题</div><div class="fit">'+ n.fit.map(function(f){return '<span>'+f+'</span>';}).join('') +'</div>'; }
-      if(n.phrases && n.phrases.length){ html += '<div class="lbl">好词好句</div><div class="ph">'+ n.phrases.map(function(p){return '“'+p+'”';}).join('<br>') +'</div>'; }
-      html += '</div>';
+    if(w.intro){ html += '<div class="wintro">'+ w.intro +'</div>'; }
+    var dirs = w.directions || ["自我成长","人与他人","审美与心灵感悟","人与外物·时光"];
+    html += '<div class="wdirs">'+ dirs.map(function(d){return '<span class="wdir">'+d+'</span>';}).join('') +'</div>';
+
+    function card(title, c, isNews){
+      var h = '<div class="wcard"><div class="wt">'+ title +'</div>';
+      if(c.direction){ h += '<span class="wdir-inline">'+ c.direction +'</span>'; }
+      if(isNews && c.from){ h += '<div class="wmeta">'+ c.from +'</div>'; }
+      if(!isNews && c.type){ h += '<div class="wmeta">'+ c.type +'</div>'; }
+      if(c.material){ h += '<div class="lbl">素材速写</div><p>'+ c.material +'</p>'; }
+      if(c.detail){ h += '<div class="wdetail">🔍 <b>细节支点：</b>'+ c.detail +'</div>'; }
+      if(c.angle){ h += '<div class="lbl">立意角度（含思辨）</div><p>'+ c.angle +'</p>'; }
+      if(c.avoid){ h += '<div class="wavoid"><span class="wl">⚠️ 避雷 · 拒绝套题：</span>'+ c.avoid +'</div>'; }
+      if(c.fit && c.fit.length){ h += '<div class="lbl">适配命题 / 主题</div><div class="fit">'+ c.fit.map(function(f){return '<span>'+f+'</span>';}).join('') +'</div>'; }
+      if(c.checkpoint){ h += '<div class="wcheck">🎯 <b>扣题提示：</b>'+ c.checkpoint +'</div>'; }
+      if(c.phrases && c.phrases.length){ h += '<div class="lbl">好词好句（克制·有画面）</div><div class="ph">'+ c.phrases.map(function(p){return '“'+p+'”';}).join('<br>') +'</div>'; }
+      h += '</div>';
+      return h;
     }
-    if(w.classic){
-      var c = w.classic;
-      html += '<div class="wcard">'
-        + '<div class="wt">📚 经典通用素材 · '+ (c.theme||"") +'</div>';
-      if(c.type){ html += '<div class="wmeta">类型：'+ c.type +'</div>'; }
-      if(c.material){ html += '<div class="lbl">素材内容</div><p>'+ c.material +'</p>'; }
-      if(c.angle){ html += '<div class="lbl">立意角度</div><p>'+ c.angle +'</p>'; }
-      if(c.fit && c.fit.length){ html += '<div class="lbl">适配命题 / 主题</div><div class="fit">'+ c.fit.map(function(f){return '<span>'+f+'</span>';}).join('') +'</div>'; }
-      if(c.phrases && c.phrases.length){ html += '<div class="lbl">好词好句</div><div class="ph">'+ c.phrases.map(function(p){return '“'+p+'”';}).join('<br>') +'</div>'; }
-      html += '</div>';
-    }
+    if(w.news){ html += card('📰 当日时政素材 · '+ (w.news.theme||""), w.news, true); }
+    if(w.classic){ html += card('📚 经典通用素材 · '+ (w.classic.theme||""), w.classic, false); }
     if(w.practice){ html += '<div class="wp"><div class="lbl">💡 微练笔</div><p>'+ w.practice +'</p></div>'; }
+    html += '<div class="wstruct"><b>📐 600字稳妥结构：</b>开头一两笔环境/白描带入画面(约80，先立场景、不急着喊题) → 自然引出人与事(约120) → 核心细节＋心理转变(约300，全文重心) → 由事及理、回扣题目(约80)。卷面工整、少涂改，错字病句会直接压档。</div>';
     html += '</div>';
     box.innerHTML = html;
   }
